@@ -28,6 +28,7 @@ import {
 } from '@material-ui/core';
 import GroupIcon from '@material-ui/icons/Group';
 import HelpIcon from '@material-ui/icons/Help';
+import { FeatureCalloutCircular } from '../FeatureDiscovery/FeatureCalloutCircular';
 
 // import { EmailIcon, SlackIcon, SupportIcon } from 'shared/icons';
 // import { Button, Link } from 'shared/components';
@@ -78,14 +79,20 @@ const SupportButton: FC<Props> = ({
 
   return (
     <Fragment>
-      <Button
-        data-testid="support-button"
-        color="primary"
-        onClick={onClickHandler}
+      <FeatureCalloutCircular
+        featureId="core.supportbutton"
+        title="Support"
+        description="Many pages have a support button just like this in the top right. Whenever you have feature requests or need support with functionality in a page, this is where you want to go. It will contain links to documentation and the best support channel for this particular piece of functionality."
       >
-        <HelpIcon className={classes.leftIcon} />
-        Support
-      </Button>
+        <Button
+          data-testid="support-button"
+          color="primary"
+          onClick={onClickHandler}
+        >
+          <HelpIcon className={classes.leftIcon} />
+          Support
+        </Button>
+      </FeatureCalloutCircular>
       <Popover
         open={popoverOpen}
         anchorEl={anchorEl}
